@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect('mongodb://localhost:27017/sum', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://cloudSEK:cloudSEK@cluster0.m0w27.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 
 mongoose.connection.on("connected", function () {
     console.log("mongo db connected");
