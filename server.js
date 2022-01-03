@@ -42,16 +42,19 @@ app.get("/get_answer/:idenitfier",async(req,res)=>{
     try{
     let result=await Sum.findById(idenitfier);
     result.sum=Number(result.number1)+Number(result.number2);
-    console.log("Please Wait");
+    // console.log("Please Wait");
+    if(result.sum)
+    {
     setTimeout(()=>{
     res.status(200).json({
         message:"The answer has been calculated",
         sum:result.sum,
     })   
-    },10000);
+    },10000);}
+    else{
     res.status(200).json({
         message:"Please wait",
-    })
+    })}
     }
     catch(err){
         console.log(err);
